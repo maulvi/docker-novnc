@@ -5,7 +5,6 @@
 
 # based on ubuntu 16.04 LTS
 FROM ubuntu:xenial
-# 各种环境变量
 ENV LANG=en_US.UTF-8 \
     LC_ALL=en_US.UTF-8 \
     S6_BEHAVIOUR_IF_STAGE2_FAILS=2 \
@@ -21,7 +20,7 @@ RUN groupadd user && useradd -m -g user user && \
     apt-get update && apt-get upgrade -y && \
     apt-get install -y \
         python git \
-        ca-certificates wget curl locales pcmanfm masscan \
+        ca-certificates wget curl locales obmenu obconf pcmanfm masscan \
         sudo nginx \
         xorg openbox && \
     wget -O - https://github.com/just-containers/s6-overlay/releases/download/v1.22.1.0/s6-overlay-amd64.tar.gz | tar -xzv && \
